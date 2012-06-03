@@ -1,10 +1,9 @@
-microTags.js
-============
+# microTags.js
 
 µTags is a small JavaScript library to create simple tag clouds.
 
-HTML Code
----------
+## HTML Code
+
 
 In order to create a tag cloud, you need to put your tags in a list, like this:
 
@@ -47,8 +46,7 @@ Of course, don't forget to load µTags:
 Now that you have the HTML code, you can launch µTags :-)
 
 
-JavaScript code
----------------
+## JavaScript code
 
 When the DOM is loaded, you can create the tag cloud like this:
 
