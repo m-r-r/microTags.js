@@ -65,6 +65,6 @@ You can also modify the settings:
 
 You will see something like this:
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/m-r-r/microTags.js/raw/master/screenshot.png)
 
 *Have fun*
