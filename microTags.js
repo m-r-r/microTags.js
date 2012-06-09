@@ -1,5 +1,5 @@
 
-var µTags = function(element, options) {
+var microTags = function(element, options) {
     this._el = element;
     this._children = element.childNodes;
 
@@ -16,9 +16,9 @@ var µTags = function(element, options) {
     this._set_tilt();
 }
 
-µTags.prototype.version = "0.1a"
+microTags.prototype.version = "0.1a"
 
-µTags.prototype._set_options = function(options) {
+microTags.prototype._set_options = function(options) {
     var max_size  = options['max-size'],
         min_size  = options['min-size'],
         max_angle = options['max-angle'],
@@ -27,23 +27,23 @@ var µTags = function(element, options) {
     if ((max_size >= 1) && (max_size > min_size))
         this._max_size = max_size;
     else
-        console.error("µTags: option `max-size` must be >= 1 and > min-size");
+        console.error("microTags: option `max-size` must be >= 1 and > min-size");
 
     if ((min_size > 0) && (min_size < max_size))
         this._min_size = min_size;
     else
-        console.error("µTags: option `min-size` must be > 0 and < max-size");
+        console.error("microTags: option `min-size` must be > 0 and < max-size");
 
     if (max_angle > min_angle) {
         this._max_angle = max_angle;
         this._min_angle = min_angle;
     }
     else
-        console.error("µTags: option `max-angle` must be > `min-angle`");
+        console.error("microTags: option `max-angle` must be > `min-angle`");
         
 }
 
-µTags.prototype.eachTag = function(callback) { 
+microTags.prototype.eachTag = function(callback) { 
     var i, child, tag, count;
     for (i=0; i < this._children.length; i++) {
         child = this._children[i];
@@ -55,7 +55,7 @@ var µTags = function(element, options) {
     }
 }
 
-µTags.prototype._get_max_count = function() {
+microTags.prototype._get_max_count = function() {
     var max = 0;
     this.eachTag(function(element, count) {
         max = (max < count) ? count : max;
@@ -63,7 +63,7 @@ var µTags = function(element, options) {
     return max;
 }
 
-µTags.prototype._set_sizes = function() {
+microTags.prototype._set_sizes = function() {
     var size,
         max = this._max_size,
         min = this._min_size,
@@ -77,7 +77,7 @@ var µTags = function(element, options) {
     });
 }
 
-µTags.prototype._set_tilt = function() {
+microTags.prototype._set_tilt = function() {
     var angle,
         max = this._max_angle,
         min = this._min_angle;
@@ -93,7 +93,7 @@ var µTags = function(element, options) {
 }
 
 if (window != undefined) {
-    window.µTags = µTags;
+    window.microTags = microTags;
 }
 
 

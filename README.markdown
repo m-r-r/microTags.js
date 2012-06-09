@@ -1,6 +1,6 @@
 # microTags.js
 
-µTags is a small JavaScript library to create simple tag clouds.
+microTags is a small JavaScript library to create simple tag clouds.
 
 ## HTML Code
 
@@ -25,7 +25,7 @@ Then you have to add a `data-count` attribute to all you tags:
       <li data-count="3">Tag 4</li>
       <li data-count="2">Tag 5</li>
       <li data-count="1">Tag 6</li>
-    </li>
+    </ul>
 
 The higher is the `data-count` attribute, the bigger will be the tag. 
 The value must be a positive integer.
@@ -39,22 +39,22 @@ The tags must be inline blocks:
     }
     </style>
 
-Of course, don't forget to load µTags:
+Of course, don't forget to load microTags:
 
     <script type="text/javascript" src="microTags.js"></script>
 
-Now that you have the HTML code, you can launch µTags :-)
+Now that you have the HTML code, you can launch microTags :-)
 
 
 ## JavaScript code
 
 When the DOM is loaded, you can create the tag cloud like this:
 
-    var myTagCloud = new µTags(el);
+    var myTagCloud = new microTags(el);
 
 You can also modify the settings:
 
-    var myTagCloud = new µTags(el, {
+    var myTagCloud = new microTags(el, {
         'max-size': 3,             // maximum font size in em
         'min-size': 0.7,           // minimum font size in em  
         'max-angle': 15,           // maximum tilt angle in degrees
