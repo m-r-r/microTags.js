@@ -16,7 +16,7 @@ var microTags = function(element, options) {
     this._set_tilt();
 }
 
-microTags.prototype.version = "0.1a"
+microTags.prototype.version = "0.1"
 
 microTags.prototype._set_options = function(options) {
     var max_size  = options['max-size'],
