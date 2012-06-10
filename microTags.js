@@ -12,11 +12,15 @@ var microTags = function(element, options) {
         this._set_options(options);
 
     this._max_count = this._get_max_count();
-    this._set_sizes();
-    this._set_tilt();
+    self = this;
+    this.eachTag(function(element, count) {
+        self._make_inline(element, count);
+        self._set_size(element, count);
+        self._set_tilt(element, count);
+    });
 }
 
-microTags.prototype.version = "0.1"
+microTags.prototype.version = "0.2"
 
 microTags.prototype._set_options = function(options) {
     var max_size  = options['max-size'],
@@ -63,33 +67,32 @@ microTags.prototype._get_max_count = function() {
     return max;
 }
 
-microTags.prototype._set_sizes = function() {
+microTags.prototype._make_inline = function(element, coun) {
+    element.style['display'] = 'inline-block';
+}
+
+microTags.prototype._set_size = function(element, count) {
     var size,
         max = this._max_size,
         min = this._min_size,
         max_count = this._max_count;
 
-    this.eachTag(function(element, count) {
-        size = (count * max / max_count);
-        size = (size >= min) ? size : min;
-        console.debug(element+ ': ' + count + ': ' + size );
-        element.style['fontSize'] = size + 'em';
-    });
+    size = (count * max / max_count);
+    size = (size >= min) ? size : min;
+    console.debug(element+ ': ' + count + ': ' + size );
+    element.style['fontSize'] = size + 'em';
 }
 
-microTags.prototype._set_tilt = function() {
+microTags.prototype._set_tilt = function(element, count) {
     var angle,
         max = this._max_angle,
         min = this._min_angle;
-    this.eachTag(function(element, count) {
-        angle = min + (Math.random() * (max - min));
-        element.style['transform']       = 'rotate(' + angle + 'deg)';
-        element.style['MozTransform']    = 'rotate(' + angle + 'deg)';
-        element.style['OTransform']      = 'rotate(' + angle + 'deg)';
-        element.style['WebkitTransform'] = 'rotate(' + angle + 'deg)';
-        element.style['msTransform']     = 'rotate(' + angle + 'deg)';
-    });
-
+    angle = min + (Math.random() * (max - min));
+    element.style['transform']       = 'rotate(' + angle + 'deg)';
+    element.style['MozTransform']    = 'rotate(' + angle + 'deg)';
+    element.style['OTransform']      = 'rotate(' + angle + 'deg)';
+    element.style['WebkitTransform'] = 'rotate(' + angle + 'deg)';
+    element.style['msTransform']     = 'rotate(' + angle + 'deg)';
 }
 
 if (window != undefined) {

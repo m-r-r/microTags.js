@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>microTags.js — Simple tag clouds in JavaScript</title>
+    <style>
+      /* Structure */ 
+      body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+      }
+
+      #page {
+          display: block;
+          margin: 4em auto;
+          padding: .5em 1em;
+          width: 75%;
+      }
+
+      @media screen and (max-width: 500px) {
+          #page {
+              margin: 0;
+              border-radius: 0;
+              border: none;
+              padding: .4em .5em;
+              width: auto;
+          }
+      }
+      pre {
+          margin: .5em .2em;
+          padding: .4em .3em;
+          overflow: auto;
+
+      }
+
+      /* Colors & fonts */
+      body {
+          background-color: slategray;
+
+          font-family: "Droid Serif", "Linux Libertine", serif;
+          font-size: 15px;
+          font-weight: lighter;
+          line-height: 1.4em;
+          color: #333;
+      }
+
+      h1, h2 {
+          text-decoration: none; 
+          color: black;
+          font-weight: bolder;
+      }
+
+      #page {
+          background-color: white;
+          background-color: rgba(255, 255, 255, .7);
+          border: thin solid silver;
+          border-radius: 2px;
+          -moz-box-shadow: 5px 5px 10px 5px #656565;
+          -webkit-box-shadow: 5px 5px 10px 5px #656565;
+          -o-box-shadow: 5px 5px 10px 5px #656565;
+          box-shadow: 5px 5px 10px 5px #656565;
+      }
+
+      pre {
+          font-family: monospace;
+          line-height: 1em;
+          border: thin inset silver;
+          color: #eee;
+          background-color: #222;
+      }
+
+      #tag-cloud a {
+          text-decoration: none;
+          color: #2E7DA6;
+      }
+
+      #tag-cloud a:hover {
+          text-decoration: underline;
+          color: #006DA6;
+          transform: rotate(0deg);
+          -moz-transform: rotate(0deg)!important;
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+      }
+
+      #tag-cloud li {
+          margin: .2em .2em;
+      }
+    </style>
+    <script src="microTags.js"></script>
+    <script>
+      function on_load() {
+        window.tagCloud = new microTags(document.getElementById('tag-cloud'));
+      }
+    </script>
+  </head>
+  <body onload="on_load();">
+    <div id="page">
+      <h1><strong>microTags.js</strong> — Simple tag clouds in JavaScript</h1>
+
+      <p>
+        <strong>microTags.js</strong> is a JavaScript library for making tag clouds.<br />
+        It's open-source and the code is available <a href="https://github.com/m-r-r/microTags.js">here</a>
+      </p>
+
+      <h2>A tag cloud example</h2>
+
+      <ul id="tag-cloud">
+        <li data-count="5"><a href="#">Lorem</a></li>
+        <li data-count="5"><a href="#">ipsum</a></li>
+        <li data-count="5"><a href="#">dolor</a></li>
+        <li data-count="4"><a href="#">amet</a></li>
+        <li data-count="11"><a href="#">consectetur</a></li>
+        <li data-count="10"><a href="#">adipiscing</a></li>
+        <li data-count="4"><a href="#">elit</a></li>
+        <li data-count="9"><a href="#">tristique</a></li>
+        <li data-count="6"><a href="#">ornare</a></li>
+        <li data-count="4"><a href="#">nisi</a></li>
+        <li data-count="6"><a href="#">rutrum</a></li>
+        <li data-count="12"><a href="#">pellentesque</a></li>
+        <li data-count="5"><a href="#">magna</a></li>
+        <li data-count="9"><a href="#">porttitor</a></li>
+        <li data-count="7"><a href="#">blandit</a></li>
+        <li data-count="4"><a href="#">urna</a></li>
+        <li data-count="5"><a href="#">ipsum</a></li>
+        <li data-count="9"><a href="#">facilisis</a></li>
+        <li data-count="4"><a href="#">urna</a></li>
+        <li data-count="9"><a href="#">elementum</a></li>
+        <li data-count="4"><a href="#">nunc</a></li>
+        <li data-count="5"><a href="#">lorem</a></li>
+        <li data-count="4"><a href="#">enim</a></li>
+        <li data-count="5"><a href="#">ipsum</a></li>
+        <li data-count="9"><a href="#">consequat</a></li>
+        <li data-count="5"><a href="#">vitae</a></li>
+        <li data-count="9"><a href="#">convallis</a></li>
+        <li data-count="4"><a href="#">eget</a></li>
+        <li data-count="7"><a href="#">blandit</a></li>
+        <li data-count="6"><a href="#">mauris</a></li>
+        <li data-count="7"><a href="#">Aliquam</a></li>
+        <li data-count="8"><a href="#">placerat</a></li>
+        <li data-count="9"><a href="#">facilisis</a></li>
+        <li data-count="6"><a href="#">tellus</a></li>
+        <li data-count="11"><a href="#">ullamcorper</a></li>
+        <li data-count="7"><a href="#">Aliquam</a></li>
+        <li data-count="5"><a href="#">ipsum</a></li>
+        <li data-count="6"><a href="#">ligula</a></li>
+        <li data-count="6"><a href="#">luctus</a></li>
+        <li data-count="4"><a href="#">quis</a></li>
+        <li data-count="11"><a href="#">ullamcorper</a></li>
+        <li data-count="4"><a href="#">eget</a></li>
+        <li data-count="9"><a href="#">porttitor</a></li>
+        <li data-count="5"><a href="#">vitae</a></li>
+        <li data-count="7"><a href="#">Vivamus</a></li>
+        <li data-count="4"><a href="#">diam</a></li>
+        <li data-count="6"><a href="#">libero</a></li>
+        <li data-count="8"><a href="#">vehicula</a></li>
+        <li data-count="9"><a href="#">convallis</a></li>
+        <li data-count="5"><a href="#">vitae</a></li>
+        <li data-count="7"><a href="#">egestas</a></li>
+        <li data-count="5"><a href="#">ipsum</a></li>
+        <li data-count="7"><a href="#">Aliquam</a></li>
+        <li data-count="4"><a href="#">odio</a></li>
+        <li data-count="5"><a href="#">velit</a></li>
+        <li data-count="10"><a href="#">vestibulum</a></li>
+        <li data-count="6"><a href="#">luctus</a></li>
+        <li data-count="11"><a href="#">ullamcorper</a></li>
+        <li data-count="4"><a href="#">quis</a></li>
+        <li data-count="6"><a href="#">tellus</a></li>
+        <li data-count="12"><a href="#">pellentesque</a></li>
+        <li data-count="8"><a href="#">placerat</a></li>
+        <li data-count="5"><a href="#">purus</a></li>
+        <li data-count="4"><a href="#">amet</a></li>
+        <li data-count="6"><a href="#">rutrum</a></li>
+        <li data-count="8"><a href="#">Praesent</a></li>
+        <li data-count="6"><a href="#">semper</a></li>
+        <li data-count="4"><a href="#">diam</a></li>
+        <li data-count="4"><a href="#">diam</a></li>
+        <li data-count="9"><a href="#">tristique</a></li>
+        <li data-count="4"><a href="#">amet</a></li>
+        <li data-count="9"><a href="#">dignissim</a></li>
+        <li data-count="4"><a href="#">nibh</a></li>
+        <li data-count="6"><a href="#">congue</a></li>
+        <li data-count="5"><a href="#">purus</a></li>
+        <li data-count="12"><a href="#">pellentesque</a></li>
+        <li data-count="11"><a href="#">consectetur</a></li>
+      </ul>
+
+      <h2>The code</h2>
+
+      <pre>
+var element = document.getElementById('tag-list');
+var t = new microTags(element);</pre>
+
+    </div>
+  </body>
+</html>

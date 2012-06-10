@@ -30,20 +30,11 @@ Then you have to add a `data-count` attribute to all you tags:
 The higher is the `data-count` attribute, the bigger will be the tag. 
 The value must be a positive integer.
 
-The tags must be inline blocks:
-
-    <style>
-    #tagcloud li {
-      display: inline-block;
-      list-style-type: none;
-    }
-    </style>
-
 Of course, don't forget to load microTags:
 
     <script type="text/javascript" src="microTags.js"></script>
 
-Now that you have the HTML code, you can launch microTags :-)
+Now that you have the HTML code, you can use microTags :-)
 
 
 ## JavaScript code
@@ -64,5 +55,9 @@ You can also modify the settings:
 You will see something like this:
 
 ![Screenshot](https://github.com/m-r-r/microTags.js/raw/master/screenshot.png)
+
+## Demo page
+
+You can see a microTags.js demo page [here](http://m-r-r.github.com/microTags.js)
 
 *Have fun*
