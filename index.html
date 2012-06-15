@@ -74,15 +74,26 @@
           text-decoration: none;
           color: #2E7DA6;
       }
-
+      
       #tag-cloud a:hover {
           text-decoration: underline;
           color: #006DA6;
-          transform: rotate(0deg);
-          -moz-transform: rotate(0deg)!important;
-          -webkit-transform: rotate(0deg);
-          -o-transform: rotate(0deg);
-          -ms-transform: rotate(0deg);
+      }
+      
+      #tag-cloud li {
+          transition: all 1s;
+          -o-transition: all 1s;
+          -ms-transition: all 1s;
+          -moz-transition: all 1s;
+          -webkit-transition: all 1s;
+      }
+      
+      #tag-cloud li:hover {
+          transform: rotate(0deg) !important;
+          -moz-transform: rotate(0deg) !important;
+          -webkit-transform: rotate(0deg) !important;
+          -o-transform: rotate(0deg) !important;
+          -ms-transform: rotate(0deg) !important;
       }
 
       #tag-cloud li {
