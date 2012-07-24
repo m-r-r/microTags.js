@@ -14,6 +14,9 @@ help:
 min:	microTags.js
 	jsmin microTags.js > microTags.min.js
 
+doc:	microTags.js
+	yuidoc -Cc yuidoc-config.json -o doc -T simple .
+
 ghp:	index.html
 	mkdir -p www
 	cp index.html www/
