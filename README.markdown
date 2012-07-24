@@ -60,4 +60,8 @@ You will see something like this:
 
 You can see a microTags.js demo page [here](http://m-r-r.github.com/microTags.js)
 
+## License
+
+Public Domain / No copyright
+
 *Have fun*

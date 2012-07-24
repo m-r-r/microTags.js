@@ -45,10 +45,24 @@
           color: #333;
       }
 
-      h1, h2 {
+
+
+      h1, h2, h3 {
           text-decoration: none; 
           color: black;
           font-weight: bolder;
+      }
+      
+      hgroup {
+          display: block;
+          padding: 0;
+          margin: 1em;
+          text-align: center;
+      }
+      
+      h3 {
+          font-size: small;
+          font-style: italic;
       }
 
       #page {
@@ -103,17 +117,24 @@
     <script src="microTags.js"></script>
     <script>
       function on_load() {
-        window.tagCloud = new microTags(document.getElementById('tag-cloud'));
+        var ul, h1;
+        ul = document.getElementById('tag-cloud');
+        window.tagCloud = new microTags(ul);
+        h1 = document.getElementsByTagName('h1')[0];
+        h1.appendChild(document.createTextNode(' v' + microTags.version));
       }
     </script>
   </head>
   <body onload="on_load();">
     <div id="page">
-      <h1><strong>microTags.js</strong> — Simple tag clouds in JavaScript</h1>
+      <hgroup>
+        <h1><strong>microTags.js</strong></h1>
+        <h3>Simple tag clouds in JavaScript</h3>
+      </hgroup>
 
       <p>
         <strong>microTags.js</strong> is a JavaScript library for making tag clouds.<br />
-        It's open-source and the code is available <a href="https://github.com/m-r-r/microTags.js">here</a>
+        The code is available <a href="https://github.com/m-r-r/microTags.js">here</a> in the Public Domain
       </p>
 
       <h2>A tag cloud example</h2>
