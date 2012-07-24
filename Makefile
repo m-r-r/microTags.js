@@ -20,6 +20,7 @@ doc:	microTags.js
 ghp:	index.html
 	mkdir -p www
 	cp index.html www/
+	cp microTags.js www/
 	ghp-import -m 'Test page update' www
 
 test:	index.html
